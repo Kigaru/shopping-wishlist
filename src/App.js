@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Form from './components/wishlistForm';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <div className="col-md-1"></div>
           
           <div className="col-md-3">
-              <p>form goes here</p>
+              <Form />
           </div>
             
           <div className="col-md-8">
