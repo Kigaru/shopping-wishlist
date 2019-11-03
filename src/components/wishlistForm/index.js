@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './wishlistForm.css';
 
 export default class Form extends Component {
     render() {
