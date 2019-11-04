@@ -5,6 +5,12 @@ import WishlistList from './components/wishlistList';
 import api from './dataStore/stubAPI'
 
 export default class App extends Component {
+  addProduct = (name,price,link) => {
+    api.add(name,parseFloat(price),link);
+    this.setState({});
+  };
+
+
   render() {
   return (
     <div className="jumbotron">
@@ -17,7 +23,7 @@ export default class App extends Component {
           <div className="col-md-1"></div>
           
           <div className="col-md-3">
-              <Form />
+              <Form handleAdd={this.addProduct}/>
           </div>
             
           <div className="col-md-8">
