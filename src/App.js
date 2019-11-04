@@ -5,8 +5,8 @@ import WishlistList from './components/wishlistList';
 import api from './dataStore/stubAPI'
 
 export default class App extends Component {
-  addProduct = (name,price,link) => {
-    api.add(name,parseFloat(price),link);
+  addProduct = (name,price,link,quantity) => {
+    api.add(name,parseFloat(price),link,quantity);
     this.setState({});
   };
 

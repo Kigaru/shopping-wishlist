@@ -1,6 +1,18 @@
 import React, { Component, Fragment } from 'react';
 
 export default class WishlistItem extends Component {
+    
+    
+    increaseQuantity = (e) => this.props.handleModifyQuantity(this.props.item.id,1);
+    
+    decreaseQuantity = (e) => {
+            if(this.props.item.quantity > 1) {
+                this.props.handleModifyQuantity(this.props.item.id, -1);
+            }
+        }
+
+
+
     render() {
 
         let data = this.props.item;
@@ -10,32 +22,16 @@ export default class WishlistItem extends Component {
             <tr>
             <td scope="row">{data.id}</td>
             <td scope="row">{data.name}</td>
+            <td scope="row">
+                <input type="button" value="-" className="btn-danger" onClick={this.decreaseQuantity} />
+                {data.quantity}
+                <input type="button" value="+" className="btn-success" onClick={this.increaseQuantity} />
+            </td>
             <td scope="row">€{data.price}</td>
-            <td scope="row"><a target="_blank" href={data.link}><span class="glyphicon glyphicon-globe"></span></a></td>
-            <td scope="row"><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td scope="row"><a target="_blank" href={data.link}><span className="glyphicon glyphicon-globe"></span></a></td>
+            <td scope="row"><a href="#"><span className="glyphicon glyphicon-trash"></span></a></td>
             </tr>
         </Fragment>
           );
       }
-  } 
-
-  //   let line = this.props.post.link ? (
-        //       <a href={this.props.post.link}>{this.props.post.title}</a>
-        //   ) : (
-        //       <span>{this.props.post.title}</span>
-        //   );
-
-        //   return (
-        //       <Fragment>
-        //           <span className="ptr" >
-        //               <FontAwesomeIcon icon={["fas", "thumbs-up"]} size="2x" />
-        //           {` ${this.props.post.upvotes}`}
-        //           </span>
-        //           <span className="newsitem">
-        //               {line}
-        //               <span>
-        //                   <a href="/">Comments</a>
-        //               </span>
-        //           </span>
-        //           <p className="author">{this.props.post.author}</p>
-        //       </Fragment>
+  }
