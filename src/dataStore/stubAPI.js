@@ -57,7 +57,7 @@ class StubAPI {
 
     modifyQuantity(id, number) {
       let change = this.getProduct(id).quantity;
-      this.getProduct(id).quantity += number; 
+      this.getProduct(id).quantity = parseInt(this.getProduct(id).quantity) + number; 
       if(change != this.getProduct(id).quantity) return true;
     }
 
