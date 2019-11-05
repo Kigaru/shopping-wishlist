@@ -34,8 +34,21 @@ class StubAPI {
         ];
     }
 
+    sortIds() {
+      let index = 1;
+      for(let product in this.products) {
+        this.products[product].id = this.products[product].id === index ? this.products[product].id : index;
+        index++;
+      }
+    }
+
     getAll() {
         return this.products;
+    }
+
+    remove(id) {
+      lodash.remove(this.products, {id: id});
+      this.sortIds();
     }
 
     add(name, price, link, quantity) {

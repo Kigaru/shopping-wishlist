@@ -6,7 +6,16 @@ export default class WishlistList extends Component {
     modifyQuantity = (id, number) => {
         api.modifyQuantity(id,number);
         this.setState({});
-      };
+    };
+
+    removeProduct= (id) => {
+
+        api.remove(id);
+        this.setState({});
+    }
+
+
+
 
     render() {
 
@@ -14,7 +23,7 @@ export default class WishlistList extends Component {
 
         const wishlistItems = this.props.items.map(c => (
             totalPrice += (c.price * c.quantity),
-            <WishlistItem key={c.id} item={c} handleModifyQuantity={this.modifyQuantity}/>
+            <WishlistItem key={c.id} item={c} handleModifyQuantity={this.modifyQuantity} handleRemove={this.removeProduct}/>
         ));
 
 

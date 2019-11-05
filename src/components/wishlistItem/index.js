@@ -11,12 +11,16 @@ export default class WishlistItem extends Component {
             }
         }
 
+    removeProduct = (e) => {
+
+        this.props.handleRemove(this.props.item.id);  
+    }
+
 
 
     render() {
 
         let data = this.props.item;
-
         return (
         <Fragment>
             <tr>
@@ -29,7 +33,7 @@ export default class WishlistItem extends Component {
             </td>
             <td scope="row">€{data.price}</td>
             <td scope="row"><a target="_blank" href={data.link}><span className="glyphicon glyphicon-globe"></span></a></td>
-            <td scope="row"><a href="#"><span className="glyphicon glyphicon-trash"></span></a></td>
+            <td scope="row"><button type="button" className="glyphicon btn-m glyphicon-trash btn-link" onClick={this.removeProduct} /></td>
             </tr>
         </Fragment>
           );
