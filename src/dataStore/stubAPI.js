@@ -90,6 +90,52 @@ class StubAPI {
         return result;
     }
 
+
+    sortProducts(array, order) {
+      return lodash.sortBy(array, [order]);
+    }
+
+
+    filterProductsByText(array, type, filter) {
+      if(filter === "") {
+        return array;
+      }
+      else {
+        return array.filter(c => {
+          const toSearch = `${c[type]}`;
+          return toSearch.toLowerCase().search(filter) !== -1;
+          });
+      }
+    }
+
+    filterProductsByPriceMoreLessThan(array, type, filter) {
+      if(isNaN(filter)) {
+
+        return array;
+      }
+      else {
+        return array.filter(c => {
+          const toSearch = `${c.price}`;
+          if(type === "minPrice") {
+            return toSearch > filter;
+          }
+          else if(type==="maxPrice") {
+            return toSearch < filter;
+          }
+          else return false;
+          });
+        
+      }
+    }
+
+    filterProducts(array, type, filter) { 
+      if(type === "minPrice" || type === "maxPrice") {
+        return this.filterProductsByPriceMoreLessThan(array, type, filter);
+      }
+      else {
+        return this.filterProductsByText(array, type, filter);
+      }
+    }
 }
 
 
