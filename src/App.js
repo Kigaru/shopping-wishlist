@@ -12,7 +12,7 @@ export default class App extends Component {
 
 
   render() {
-  return (
+    return (
     <div className="jumbotron">
       <h1 className="text-center"><a href="/">Shopping Wishlist</a></h1>
 

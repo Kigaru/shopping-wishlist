@@ -24,7 +24,7 @@ export default class WishlistItem extends Component {
         return (
         <Fragment>
             <tr>
-            <td scope="row">{data.id}</td>
+            <td scope="row">{data.priority}</td>
             <td scope="row">{data.name}</td>
             <td scope="row">
                 <input type="button" value="-" className="btn-danger" onClick={this.decreaseQuantity} />
