@@ -12,8 +12,13 @@ export default class App extends Component {
 
   addProduct = (name,price,link,quantity) => {
     api.add(name,parseFloat(price),link,quantity);
-    this.setState({order: this.state.order});
+    this.setState({name: this.state.name, minPrice: this.state.minPrice, maxPrice: this.state.maxPrice, order: this.state.order});
   };
+
+  removeItem = (id) => {
+    api.remove(id);
+    this.setState({name: this.state.name, minPrice: this.state.minPrice, maxPrice: this.state.maxPrice, order: this.state.order});
+  }
 
   filterProducts = (type, value) => {
     
@@ -62,7 +67,7 @@ export default class App extends Component {
             
           <div className="col-md-8">
           <Filter filterProducts={this.filterProducts} />
-            <WishlistList items = {diplayedProducts} />
+            <WishlistList items = {diplayedProducts} handleRemoveWithSorting={this.removeItem} />
           </div>
         </div>    
       </div>

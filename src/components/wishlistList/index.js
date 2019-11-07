@@ -9,9 +9,7 @@ export default class WishlistList extends Component {
     };
 
     removeProduct= (id) => {
-
-        api.remove(id);
-        this.setState({});
+        this.props.handleRemoveWithSorting(id);
     }
 
 
