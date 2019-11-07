@@ -24,8 +24,24 @@ export default class WishlistItem extends Component {
         return (
         <Fragment>
             <tr>
-            <td scope="row">{data.priority}</td>
-            <td scope="row">{data.name}</td>
+            
+           
+            
+            <td scope="row">
+            {data.priority}
+            </td>
+            
+            
+                <td scope="row">
+                <button className="btn btn-link btn-block" style={{"text-decoration": "none", "color": "black", "padding": "0"}}>
+
+                    <div className="text-left">
+                        {data.name}
+                        </div>
+                        </button>
+            
+                </td>
+
             <td scope="row">
                 <input type="button" value="-" className="btn-danger" onClick={this.decreaseQuantity} />
                 {data.quantity}
@@ -35,6 +51,7 @@ export default class WishlistItem extends Component {
             <td scope="row"><a target="_blank" href={data.link}><span className="glyphicon glyphicon-globe"></span></a></td>
             <td scope="row"><button type="button" className="glyphicon btn-m glyphicon-trash btn-link" onClick={this.removeProduct} /></td>
             </tr>
+
         </Fragment>
           );
       }
