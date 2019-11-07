@@ -12,7 +12,6 @@ export default class WishlistItem extends Component {
         }
 
     removeProduct = (e) => {
-
         this.props.handleRemove(this.props.item.id);  
     }
 
@@ -33,7 +32,7 @@ export default class WishlistItem extends Component {
             
             
                 <td scope="row">
-                <button className="btn btn-link btn-block" style={{"text-decoration": "none", "color": "black", "padding": "0"}}>
+                <button className="btn btn-link btn-block" style={{"textDecoration": "none", "color": "black", "padding": "0"}}>
 
                     <div className="text-left">
                         {data.name}
