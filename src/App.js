@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import './App.css';
 import Form from './components/wishlistForm';
 import WishlistList from './components/wishlistList';
@@ -41,8 +42,12 @@ export default class App extends Component {
     diplayedProducts = api.sortProducts(diplayedProducts, this.state.order);
 
     return (
+      <BrowserRouter>
+      <Route path="/">
     <div className="jumbotron">
       <h1 className="text-center"><a href="/">Shopping Wishlist</a></h1>
+      <Route path="/hfil"><h1 className="text-center">You have entered the Home For Infinite Losers</h1></Route>
+
 
       <hr/>
       
@@ -63,6 +68,8 @@ export default class App extends Component {
       </div>
       
     </div>
+    </Route>
+    </BrowserRouter>
     );
   }
 }
