@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/shopping-wishlist/static/css/main.b100e6da.chunk.css",
+    "main.js": "/shopping-wishlist/static/js/main.a9f63aff.chunk.js",
+    "main.js.map": "/shopping-wishlist/static/js/main.a9f63aff.chunk.js.map",
+    "runtime-main.js": "/shopping-wishlist/static/js/runtime-main.3c580a33.js",
+    "runtime-main.js.map": "/shopping-wishlist/static/js/runtime-main.3c580a33.js.map",
+    "static/css/2.d0f33647.chunk.css": "/shopping-wishlist/static/css/2.d0f33647.chunk.css",
+    "static/js/2.e671f493.chunk.js": "/shopping-wishlist/static/js/2.e671f493.chunk.js",
+    "static/js/2.e671f493.chunk.js.map": "/shopping-wishlist/static/js/2.e671f493.chunk.js.map",
+    "index.html": "/shopping-wishlist/index.html",
+    "precache-manifest.c5d282b76c1eab67931d54fa8713decc.js": "/shopping-wishlist/precache-manifest.c5d282b76c1eab67931d54fa8713decc.js",
+    "service-worker.js": "/shopping-wishlist/service-worker.js",
+    "static/css/2.d0f33647.chunk.css.map": "/shopping-wishlist/static/css/2.d0f33647.chunk.css.map",
+    "static/css/main.b100e6da.chunk.css.map": "/shopping-wishlist/static/css/main.b100e6da.chunk.css.map",
+    "static/media/bootstrap.css": "/shopping-wishlist/static/media/glyphicons-halflings-regular.fa277232.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3c580a33.js",
+    "static/css/2.d0f33647.chunk.css",
+    "static/js/2.e671f493.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.a9f63aff.chunk.js"
+  ]
+}
