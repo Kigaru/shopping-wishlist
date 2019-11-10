@@ -32,12 +32,12 @@ export default class WishlistItem extends Component {
             
             
                 <td scope="row">
-                <button className="btn btn-link btn-block" style={{"textDecoration": "none", "color": "black", "padding": "0"}}>
+                <a href={`/item/${data.id}`} style={{"textDecoration": "none"}} > <button className="btn btn-link btn-block" style={{"textDecoration": "none", "color": "black", "padding": "0"}}>
 
                     <div className="text-left">
                         {data.name}
                         </div>
-                        </button>
+                        </button></a>
             
                 </td>
 

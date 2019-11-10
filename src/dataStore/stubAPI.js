@@ -136,6 +136,14 @@ class StubAPI {
         return this.filterProductsByText(array, type, filter);
       }
     }
+
+    updateProduct(id, name, price, link, quantity){
+      this.getProduct(id).name = name;
+      this.getProduct(id).price = price;
+      this.getProduct(id).link = link;
+      this.getProduct(id).quantity = quantity;
+    }
+
 }
 
 

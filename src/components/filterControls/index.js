@@ -27,14 +27,14 @@ export default class Form extends Component {
               <div>min:</div>
               <input type="text"
                 className="form-control"
-                placeholder="€    Minimum Price"
+                placeholder="€    Min Price"
                 onChange={this.handlePriceMinChange} />
             </div>
             <div className="form-group col-sm-1"> 
             <div>max:</div>
               <input type="text"
                 className="form-control"
-                placeholder="€    Maximum Price"
+                placeholder="€    Max Price"
                 onChange={this.handlePriceMaxChange}></input>
             </div>
             <div className="form-group col-sm-2"> 
