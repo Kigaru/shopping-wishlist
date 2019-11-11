@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Shopping Wishlist
 
-## Available Scripts
+## Overview.
 
-In the project directory, you can run:
+The web app is designed to display a shopping wishlist of a user
 
-### `npm start`
+### Features:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- CRUD Functionality
+- Total up the prices of all products
+- Change the quantity of each product
+- Filter by name, min price, max price
+- Sort alphabetically, priority or price
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Setup.
 
-### `npm test`
+An example of this webapp is available on https://kigaru.github.io/shopping-wishlist/
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you want to test it out locally, then you need to clone this code. Then you need to type in the following commands inside of the folder that you have cloned the code into:
 
-### `npm run build`
+`npm install`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Data Model Design.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![][model]
 
-### `npm run eject`
+. . . Briefly explain any non-trivial aspects of the model . . . . .
+The product has structured details of the product, such as the generated ID with UUID, the name of the product and the price. An example is provided below
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+~~~
+{
+    id: "sfwml1",
+    priority: 1,
+    name: "Steam Controller",
+    price: 54.99,
+    link: "https://store.steampowered.com/app/353370/",
+    quantity: 1
+}
+~~~
+## UI Design.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![][main]
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+>> The table lists each product in the datastore. This product list can be filtered by name, minimum price and maximum price. A product can be edited by clicking on the name of the product or deleted by clicking the trash icon.
 
-## Learn More
+![][detail]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+>> The edit view allows the user to update an already existing product.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Routing.
 
-### Code Splitting
+- / (public) - Displays all existing products and allows the user to submit a new product
+- /item/:id (public) - Detailed view of a particular product. Allows the user to update the product.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Storybook.
 
-### Analyzing the Bundle Size
+The following are the available components available in storybook 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![][stories]
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[model]: ./readme_resources/model.png
+[main]: ./readme_resources/main.png
+[detail]: ./readme_resources/detail.png
+[stories]: ./readme_resources/stories.png
