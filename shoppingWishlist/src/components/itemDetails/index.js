@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from "react";
 import { withRouter } from "react-router-dom";
-import api from '../../dataStore/stubAPI'
+import * as api from '../../api';
 
 export default class ItemDetails extends Component {
 

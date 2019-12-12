@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import ItemDetails from "./components/itemDetails/"
+import ItemDetails from "./components/itemDetails"
 
 
 

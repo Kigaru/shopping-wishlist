@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import WishlistItem from '../wishlistItem/';
-import api from '../../dataStore/stubAPI'
+import * as api from '../../api';
 
 export default class WishlistList extends Component {
     modifyQuantity = (id, number) => {

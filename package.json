@@ -1,46 +1,29 @@
 {
-  "homepage": "https://kigaru.github.io/shopping-wishlist/",
   "name": "shopping-wishlist",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^3.4.1",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "uuid": "^3.3.3"
-  },
+  "version": "1.0.0",
+  "description": "The web app is designed to display a shopping wishlist of a user",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --ignore shoppingWishlist/* --exec babel-node index.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kigaru/shopping-wishlist.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Kigaru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kigaru/shopping-wishlist/issues"
   },
+  "homepage": "https://github.com/Kigaru/shopping-wishlist#readme",
   "devDependencies": {
-    "@storybook/addon-actions": "^5.2.6",
-    "@storybook/addon-links": "^5.2.6",
-    "@storybook/addons": "^5.2.6",
-    "@storybook/react": "^5.2.6",
-    "gh-pages": "^2.1.1"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
   }
 }
