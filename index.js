@@ -2,11 +2,16 @@ import dotenv from 'dotenv';
 import express from 'express';
 import productsRouter from './api/products';
 import bodyParser from 'body-parser';
-
+import './db';
+//import loadProducts from './productsData';
 
 dotenv.config();
 
 const app = express();
+
+// if (process.env.seedDb) { 
+//   loadProducts();
+// }
 
 const port = process.env.PORT;
 

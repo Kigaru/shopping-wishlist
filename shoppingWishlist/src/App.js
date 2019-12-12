@@ -54,7 +54,7 @@ export default class App extends Component {
         minPrice: this.state.minPrice,
         maxPrice: this.state.value,
         order: this.state.order,
-        products: resp.products
+        products: resp
       });
     }).catch(console.error);
   };
