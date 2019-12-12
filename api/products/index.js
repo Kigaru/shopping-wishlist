@@ -14,8 +14,11 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const newProduct = req.body;
 
-    if (newProduct && api.add(newProduct.name, newProduct.price, newProduct.link, newProduct.quantity)) {
-         return res.status(201).send({message: 'Product Created'});
+    if (newProduct) {
+      let id = api.add(newProduct.name, newProduct.price, newProduct.link, newProduct.quantity);
+      if(id != false) { 
+         return res.status(201).send({message: 'Product Created', productID: id});
+      }
     }
     return res.status(400).send({message: 'Unable to find Product in request.'});
 });
@@ -23,7 +26,7 @@ router.post('/', (req, res) => {
 // get a post
 router.get('/:id', (req, res) => {
     const id = req.params.id;
-    const post = api.getPost(id);
+    const post = api.getProduct(id);
 
        if (post) {
                return res.status(200).send(post);

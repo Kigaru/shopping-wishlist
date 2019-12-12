@@ -73,8 +73,7 @@ add: (name, price, link, quantity) => {
       link,
       quantity
     });
-    console.log("added item " + name + " with an id of: " + id);
-    return newLen > len; //return true if the length of the new list is bigger than the old list
+    return newLen > len ? id : false; //return the id if the length of the new list is bigger than the old list
   },
 
 modifyQuantity: (id, number) => {

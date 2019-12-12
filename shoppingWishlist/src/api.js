@@ -14,7 +14,7 @@ export const add = (newName, newPrice, newLink, newQuantity) => {
 
 export const getProduct = (id) => {
 
-  return axios.get(`/api/posts/${id}`)
+  return axios.get(`/api/products/${id}`)
     .then(resp => resp.data);
 
 };
