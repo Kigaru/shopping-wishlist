@@ -26,8 +26,11 @@ export default class App extends Component {
   };
 
   removeItem = (id) => {
-    api.remove(id);
-    this.setState({ name: this.state.name, minPrice: this.state.minPrice, maxPrice: this.state.maxPrice, order: this.state.order, products: this.state.products });
+    api.remove(id).then(a => {
+      api.getAll().then(products => {
+      this.setState({ name: this.state.name, minPrice: this.state.minPrice, maxPrice: this.state.maxPrice, order: this.state.order, products: products });
+      })
+    });
   }
 
   filterProducts = (type, value) => {

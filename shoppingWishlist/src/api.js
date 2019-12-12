@@ -21,7 +21,10 @@ export const getProduct = (id) => {
 
 export const updateProduct = () => { };
 
-export const remove = () => { };
+export const remove = (id) => { 
+  return axios.delete(`/api/products/${id}`)
+  .then(resp => resp.data);
+};
 
 export const modifyQuantity = () => { };
 
@@ -80,13 +83,6 @@ export const sortProducts = (array, order) => {
 //       products[product].priority = products[product].priority === index ? products[product].priority : index;
 //       index++;
 //     }
-//   },
-
-
-//   remove: (id) => {
-//     lodash.remove(products, { id: id });
-//     api.sortPriorities();
-//     console.log("removed item with an id of: " + id);
 //   },
 
 //   modifyQuantity: (id, number) => {

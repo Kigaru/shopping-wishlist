@@ -44,9 +44,10 @@ router.put('/:id', asyncHandler(async (req, res) => {
 
 // Delete a contact
 router.delete('/:id', asyncHandler(async (req, res) => {
-  const product = await Product.findById(req.params.id);
+  console.log(req.params.id);
+  const product = await Product.find({"_id":req.params.id});
   if (!product) return res.send(404);
-  await product.remove();
+  await Product.deleteOne({"_id":product._id});
   return res.status(204).send(product);
 }));
 
