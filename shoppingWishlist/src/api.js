@@ -19,14 +19,22 @@ export const getProduct = (id) => {
 
 };
 
-export const updateProduct = () => { };
-
-export const remove = (id) => { 
-  return axios.delete(`/api/products/${id}`)
-  .then(resp => resp.data);
+export const updateProduct = (id, newName, newPrice, newLink, newQuantity) => {
+  return axios.put(`/api/products/${id}`, { _id: id, name: newName, price: newPrice, link: newLink, quantity: newQuantity })
+    .then(resp => resp.data)
 };
 
-export const modifyQuantity = () => { };
+export const remove = (id) => {
+  return axios.delete(`/api/products/${id}`)
+    .then(resp => resp.data);
+};
+
+export const modifyQuantity = (id, number) => {
+  api.getProduct(id).then(done => {
+    api.updateProduct(id, done.name, done.price, done.link, parseInt(done[0].quantity) + number);
+  });
+
+};
 
 export const filterProductsByText = (array, type, filter) => {
   if (filter === "") {
@@ -70,8 +78,8 @@ export const filterProducts = (array, type, filter) => {
 };
 
 export const sortProducts = (array, order) => {
-    return lodash.sortBy(array, [order]);
-  };
+  return lodash.sortBy(array, [order]);
+};
 
 
 
@@ -85,24 +93,5 @@ export const sortProducts = (array, order) => {
 //     }
 //   },
 
-//   modifyQuantity: (id, number) => {
-//     let change = api.getProduct(id).quantity;
-//     api.getProduct(id).quantity = parseInt(api.getProduct(id).quantity) + number;
-//     if (change !== api.getProduct(id).quantity) return true;
-//   },
-
-
-
-
-
-
-
-
-//   updateProduct: (id, name, price, link, quantity) => {
-//     api.getProduct(id).name = name;
-//     api.getProduct(id).price = price;
-//     api.getProduct(id).link = link;
-//     api.getProduct(id).quantity = quantity;
-//   }
-// };
+//   
 // export default api;

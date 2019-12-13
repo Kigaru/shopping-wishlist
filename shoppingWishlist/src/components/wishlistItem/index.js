@@ -3,11 +3,17 @@ import React, { Component, Fragment } from 'react';
 export default class WishlistItem extends Component {
     
     
-    increaseQuantity = (e) => this.props.handleModifyQuantity(this.props.item.id,1);
+    increaseQuantity = (e) => {
+        this.props.handleModifyQuantity(this.props.item._id,1);
+        this.props.item.quantity+=1;
+        this.setState();
+    }
     
     decreaseQuantity = (e) => {
             if(this.props.item.quantity > 1) {
-                this.props.handleModifyQuantity(this.props.item.id, -1);
+                this.props.handleModifyQuantity(this.props.item._id, -1);
+                this.props.item.quantity-=1;
+                this.setState();
             }
         }
 

@@ -11,24 +11,20 @@ export default class App extends Component {
 
   addProduct = (name, price, link, quantity) => {
     api.add(name, parseFloat(price), link, quantity).then(resp => {
-      api.getProduct(resp.productID).then(product => {
-        this.setState({
-          name: this.state.name,
-          minPrice: this.state.minPrice,
-          maxPrice: this.state.maxPrice,
-          order: this.state.order,
-          products: this.state.products.concat([product])
-        });
-      }
-      )
-    }
-    )
+      this.setState({
+        name: this.state.name,
+        minPrice: this.state.minPrice,
+        maxPrice: this.state.maxPrice,
+        order: this.state.order,
+        products: this.state.products.concat([resp])
+      });
+    })
   };
 
   removeItem = (id) => {
     api.remove(id).then(a => {
       api.getAll().then(products => {
-      this.setState({ name: this.state.name, minPrice: this.state.minPrice, maxPrice: this.state.maxPrice, order: this.state.order, products: products });
+        this.setState({ name: this.state.name, minPrice: this.state.minPrice, maxPrice: this.state.maxPrice, order: this.state.order, products: products });
       })
     });
   }
