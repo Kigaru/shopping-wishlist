@@ -23,9 +23,6 @@ If you want to test it out locally, then you need to clone this code. Then you n
 `npm start`
 
 ## Data Model Design.
-
-![][model]
-
 . . . Briefly explain any non-trivial aspects of the model . . . . .
 The product has structured details of the product, such as the generated ID with UUID, the name of the product and the price. An example is provided below
 
