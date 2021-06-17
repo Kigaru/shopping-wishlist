@@ -38,9 +38,6 @@ The product has structured details of the product, such as the generated ID with
 ~~~
 ## UI Design.
 
-
-![][main]
-
 >> The table lists each product in the datastore. This product list can be filtered by name, minimum price and maximum price. A product can be edited by clicking on the name of the product or deleted by clicking the trash icon.
 
 ![][detail]
@@ -57,6 +54,5 @@ The product has structured details of the product, such as the generated ID with
 The following are the available components available in storybook 
 
 ![][stories]
-[main]: ./readme_resources/main.png
 [detail]: ./readme_resources/detail.png
 [stories]: ./readme_resources/stories.png
