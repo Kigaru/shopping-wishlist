@@ -14,7 +14,7 @@ The web app is designed to display a shopping wishlist of a user
 
 ## Setup.
 
-An example of this webapp is available on https://kigaru.github.io/shopping-wishlist/
+An example of this webapp is available on https://kuhaneko.github.io/shopping-wishlist/
 
 If you want to test it out locally, then you need to clone this code. Then you need to type in the following commands inside of the folder that you have cloned the code into:
 
